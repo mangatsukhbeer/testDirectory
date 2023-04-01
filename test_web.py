@@ -11,6 +11,7 @@ from webdriver_manager.chrome import ChromeType
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
+
 class WebTest(unittest.TestCase):
 
     @classmethod
@@ -76,7 +77,7 @@ class WebTest(unittest.TestCase):
     def test_03_sendSearchKeys(self,xpath='//input[@aria-label="Search"]',keys="Sukhbeer Mangat"):
         assert self.waitSendKeys(xpath,keys)
     
-    def test_04_searchButtonClick(self,xpath='//input[@aria-label=Google Search"]'):
+    def test_04_searchButtonClick(self,xpath='//input[@aria-label="Google Search"]'):
         assert self.waitClickFunction(xpath=xpath)
     
     def test_05_takeScreenshot(self,name="testShot"):
@@ -94,6 +95,7 @@ if __name__ == '__main__':
     with open(logfile,"w") as file:
         runner = unittest.TextTestRunner(file)
         unittest.main(testRunner=runner)
+    
 
 # @pytest.fixture()
 # def test_setup():
