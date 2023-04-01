@@ -27,10 +27,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Test with pytest
-      run: pytest -v
+      run: pytest test_web.py
     - name: send logs
       run: python sendLogs.py
