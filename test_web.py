@@ -1,7 +1,7 @@
 import pytest
 
 @pytest.mark.usefixtures("setupDriver")
-class testOne:
+class TestOne:
 
     def test_loadWebsite(self):
 
