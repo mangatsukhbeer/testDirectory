@@ -32,8 +32,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test_web.py
-        cat logs.txt
+        cat log.txt
         python sendLogs.py
     - name: logs
       if: always()
-      run: cat logs.txt
+      run: cat log.txt
