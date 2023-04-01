@@ -16,7 +16,6 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-    continue-on-error: true
 
     steps:
     - uses: actions/checkout@v3
@@ -31,7 +30,7 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
-      run: |
-        pytest test_web.py
-        python sendLogs.py
-        
+      run: pytest test_web.py
+    - name: logs
+      if: always()
+      run: cat logs.txt
