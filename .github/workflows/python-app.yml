@@ -30,7 +30,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
-      run: pytest test_web.py
+      run: |
+        pytest test_web.py
+        cat logs.txt
+        python sendLogs.py
     - name: logs
       if: always()
       run: cat logs.txt
