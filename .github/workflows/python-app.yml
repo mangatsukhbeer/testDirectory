@@ -33,5 +33,5 @@ jobs:
       run: |
         pytest test_web.py
     - name: Send Message
-      if: always()
-      run: python sendLogs.py
+      shell: bash
+      run: cat /home/runner/work/testDirectory/testDirectory/log.txt
