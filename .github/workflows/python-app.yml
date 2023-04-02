@@ -32,6 +32,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test_web.py
-    - shell: bash
+    - name: Send Message
       if: always()
-      run: cat log.txt
+      run: python sendLogs.py
