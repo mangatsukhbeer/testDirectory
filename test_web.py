@@ -93,6 +93,7 @@ class WebTest(unittest.TestCase):
 if __name__ == '__main__':
     logfile = "log.txt"
     with open(logfile,"w") as file:
+        print(f'file saved in {os.getcwd()} ')
         runner = unittest.TextTestRunner(file)
         unittest.main(testRunner=runner)
     
